@@ -232,7 +232,9 @@ Welcome to the structured project repository of developer **Shrekulka**. This sp
         ├── human_body_mass_index/                       # Body Mass Index (BMI) calculator
         ├── numeric_data_file_analyzer/                  # Statistical analyzer for large numeric files
         ├── order-management-service/                    # K2 Order Bookkeeping module on Django Rest Framework
-        ├── scraper/artikul_price_tracker/               # Wildberries e-commerce price monitor
+        ├── scraper/                                     # Web scraping utilities (client work)
+        │   ├── artikul_price_tracker/                   # Wildberries e-commerce price monitor
+        │   └── teremok_parser_task/                     # Teremok.org.ua classifieds scraper — paid test assignment
         └── task_manager/                                # Django + HTMX task management board
 
 ---
@@ -259,6 +261,7 @@ Welcome to the structured project repository of developer **Shrekulka**. This sp
   - `numeric_data_file_analyzer` — An analytical script scanning files containing long sequences of raw integers. It calculates minimum, maximum, median, and mean values while identifying the longest consecutive ascending and descending progressions.
   - `order-management-service` — The order administration component for the K2 Enterprise Resource Planning platform. It exposes REST endpoints for Client, Product, and Order database entities through custom serializer layers, features TypeScript UI configuration forms, is documented with Swagger/ReDoc schemas, and includes unit test coverage written in pytest.
   - `scraper/artikul_price_tracker` — An automated price tracking utility monitoring target items on Wildberries by processing dynamic identifiers through Selenium. The compiled price points are structured and saved as Excel reports using openpyxl.
+  - `scraper/teremok_parser_task` — A paid test assignment: a production-grade scraper for the Teremok.org.ua classifieds board. Collects the 200 latest listings across 5 categories, offering two selectable strategies (strict-newest vs. quota-guaranteed category coverage), two-level deduplication (exact hash + near-duplicate by seller), Hard Gate quality validation that blocks export on data integrity violations, and structured output to CSV, JSON, and Excel.
   - `task_manager` — A task administration interface written in Django and utilizing HTMX for real-time changes without full webpage reloads. Equipped with both development and production configurations supporting Nginx proxies and PostgreSQL database environments.
 
 ---

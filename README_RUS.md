@@ -233,7 +233,9 @@ Shrekulka/
     ├── human_body_mass_index/                       # ⚖️ ИМТ по ВОЗ: 5 категорий (Underweight → Obese)
     ├── numeric_data_file_analyzer/                  # 📊 Max, min, медиана, среднее + длиннейшие последовательности
     ├── order-management-service/                    # 📦 K2 ERP: Клієнт/Товар/Замовлення, DRF, TypeScript, Docker
-    ├── scraper/artikul_price_tracker/               # 🛒 Трекер цен Wildberries по артикулам (Selenium + openpyxl)
+    ├── scraper/                                     # 🕸️ Скраперы для клиентских задач
+    │   ├── artikul_price_tracker/                   # 🛒 Трекер цен Wildberries по артикулам (Selenium + openpyxl)
+    │   └── teremok_parser_task/                     # 🏠 Скрапер доски Teremok.org.ua — оплачиваемое тестовое задание
     └── task_manager/                                # 📋 Django + HTMX: проекты, задачи, дедлайны, Docker
 ```
 
@@ -261,6 +263,7 @@ Shrekulka/
   - `numeric_data_file_analyzer` — 6 значений из файла с целыми числами: max, min, медиана, среднее + наидлиннейшие возрастающая и убывающая последовательности.
   - `order-management-service` — K2 ERP (модуль обліку замовлень): сутності Клієнт/Товар/Замовлення через OrderItem, REST API на DRF, TypeScript-форми, Docker, Swagger/ReDoc, pytest.
   - `scraper/artikul_price_tracker` — трекер цен товаров Wildberries по артикулам: Selenium для обхода сайта, Excel-отчёты через openpyxl.
+  - `scraper/teremok_parser_task` — оплачиваемое тестовое задание: продакшн-грейд парсер доски объявлений Teremok.org.ua. Собирает 200 новейших объявлений в 5 категориях, поддерживает два режима отбора (строго новейшие / гарантированное покрытие категорий по квоте), двухуровневую дедупликацию (точные хеши + похожие по продавцу), Hard Gate валидацию, блокирующую экспорт при нарушении целостности данных, и выгрузку в CSV, JSON и Excel.
   - `task_manager` — Django + HTMX: управление проектами и задачами с дедлайнами без перезагрузки страницы. Docker dev/prod (Nginx, PostgreSQL), pre-commit, линтинг.
 
 ---

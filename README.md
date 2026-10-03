@@ -223,6 +223,7 @@ Welcome to the structured project repository of developer **Shrekulka**. This sp
     │
     ├── solana-webwallet/                                # ⭐ Solana Non-Custodial Telegram Wallet Bot
     └── tasks/                                           # 🗂️ Production, Commercial, and Applied Software (Python)
+        ├── airadar/                                     # AI Radar: catalog, comparison and dashboard of AI sites (Django, freeserp.ai API)
         ├── auto_ria_tracker/                            # Toyota Vehicle listing monitor bot with user alert interfaces
         ├── date_assistant/                              # Instagram Profile AI Analysis assistant
         ├── email_blast/                                 # Bulk personalized email sending script
@@ -251,6 +252,7 @@ Welcome to the structured project repository of developer **Shrekulka**. This sp
 #### `tasks`
 - **Purpose:** A curated folder of custom business automation utilities, client developments, and advanced tool designs.
 - **Implementations:**
+  - `airadar` — AI Radar: a Django web app built on the public freeserp.ai API (`index=sites`, `ai_startups=1`, site homepages). Includes an AI-site catalog with search and filters (niche, builder, TLD, Domain Rating, period), a dashboard of fresh sites with charts, site pages with similar sites, and side-by-side comparison of 2–3 sites. An optional AI verdict runs on OpenRouter free models; everything else works without any keys. Comes with a site plan, a write-up of the AI workflow, and 90 offline tests.
   - `auto_ria_tracker` — A real-time monitoring tool for automotive entries matching specific criteria on the AUTO.RIA portal. It uses a periodic HTML parser to track changes, compares records against a local SQLite database, and alerts users via `aiogram v3` channels.
   - `date_assistant` — An AI analysis program for public Instagram accounts. The application processes public bios and user metrics through OpenAI, Claude, and DeepSeek Large Language Models (LLM) to deliver tailored dating or networking feedback over streaming connections.
   - `email_blast` — A bulk email solution designed to dispatch custom newsletters to batches of up to ten thousand email recipients using data imported from CSV documents. Full delivery logs are recorded locally.

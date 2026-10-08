@@ -234,6 +234,7 @@ Shrekulka/
     ├── human_body_mass_index/                       # ⚖️ ИМТ по ВОЗ: 5 категорий (Underweight → Obese)
     ├── numeric_data_file_analyzer/                  # 📊 Max, min, медиана, среднее + длиннейшие последовательности
     ├── order-management-service/                    # 📦 K2 ERP: Клієнт/Товар/Замовлення, DRF, TypeScript, Docker
+    ├── python_style_extractor/                      # 🎨 Перенос стиля Figma: визуальный язык одной дизайн-системы + композиция другой → HTML/CSS лендинг (Python, Playwright)
     ├── scraper/                                     # 🕸️ Скраперы для клиентских задач
     │   ├── artikul_price_tracker/                   # 🛒 Трекер цен Wildberries по артикулам (Selenium + openpyxl)
     │   └── teremok_parser_task/                     # 🏠 Скрапер доски Teremok.org.ua — оплачиваемое тестовое задание
@@ -264,6 +265,7 @@ Shrekulka/
   - `human_body_mass_index` — калькулятор ИМТ: 5 категорий по ВОЗ (Underweight, Normal, Overweight, Obese I/II).
   - `numeric_data_file_analyzer` — 6 значений из файла с целыми числами: max, min, медиана, среднее + наидлиннейшие возрастающая и убывающая последовательности.
   - `order-management-service` — K2 ERP (модуль обліку замовлень): сутності Клієнт/Товар/Замовлення через OrderItem, REST API на DRF, TypeScript-форми, Docker, Swagger/ReDoc, pytest.
+  - `python_style_extractor` — Figma Style Transfer & Landing Generator: Python-пайплайн, который через API извлекает UI из двух Figma-файлов, переносит визуальный язык (палитра, типографика, радиусы, тени) одной дизайн-системы на композицию и контент другой и собирает адаптивную HTML/CSS-страницу. Вся точная и воспроизводимая работа (извлечение, IR, перенос стиля, рендер) выполняется кодом; AI подключается точечно — для неоднозначной семантики ролей и дополнительной визуальной оценки, на бесплатных моделях OpenRouter. Многоуровневый QA (точность извлечения, runtime-проверки на трёх viewport, численное визуальное сравнение, AI-ревью) формирует `qa_report.json` с release gate. Конфигурация вынесена в `configs/`, 32 регрессионных теста (pytest), подробная документация.
   - `scraper/artikul_price_tracker` — трекер цен товаров Wildberries по артикулам: Selenium для обхода сайта, Excel-отчёты через openpyxl.
   - `scraper/teremok_parser_task` — оплачиваемое тестовое задание: продакшн-грейд парсер доски объявлений Teremok.org.ua. Собирает 200 новейших объявлений в 5 категориях, поддерживает два режима отбора (строго новейшие / гарантированное покрытие категорий по квоте), двухуровневую дедупликацию (точные хеши + похожие по продавцу), Hard Gate валидацию, блокирующую экспорт при нарушении целостности данных, и выгрузку в CSV, JSON и Excel.
   - `task_manager` — Django + HTMX: управление проектами и задачами с дедлайнами без перезагрузки страницы. Docker dev/prod (Nginx, PostgreSQL), pre-commit, линтинг.
